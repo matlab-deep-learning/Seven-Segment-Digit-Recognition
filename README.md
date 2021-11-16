@@ -12,7 +12,9 @@ Requirements
 Overview
 --------
 
-This repository implements seven segment digit recognition using two steps. The first step detects the location of image text using a deep learning network [1]. The second stage uses the [OCR](https://in.mathworks.com/help/vision/ref/ocr.html) function from the Computer Vision Toolbox&trade; to recognize the digits. The two-step approach helps improve OCR by only processing image regions that contains text. This is useful in industrial automation applications where the digital displays are often surrounded by other objects and background content that can hinder the performance of OCR. 
+This repository implements seven segment digit recognition using two steps. The first step detects the location of image text using a deep learning network [1]. The second stage uses the [OCR](https://in.mathworks.com/help/vision/ref/ocr.html) function from the Computer Vision Toolbox&trade; to recognize the digits. 
+
+The two-step approach helps improve OCR by only processing image regions that contains text. This is useful in industrial automation applications where the digital displays are often surrounded by other objects and background content that can hinder the performance of OCR. 
 
 Getting Started
 ---------------
@@ -32,10 +34,10 @@ Recognize Seven Segment Digits
 % Pre-process the image.
   [image, imageScale] = helper.preprocess(orgImg);
   
-% Detect seven segment text.
+% Detect seven segment digits.
   boundingBoxes = helper.textDetection(image,imageScale);
   
-% Recognize seven segment text using ocr.
+% Recognize seven segment digit using ocr.
   roi = boundingBoxes;
   txt = ocr(orgImg, roi,'TextLayout','block','Language','src/tessdata/seven-segment.traineddata');
  
@@ -52,7 +54,7 @@ Algorithms
 ---------------------------------------
 The text detection network helps in isolating seven segment text in the image and give bounding boxes (or region of interest) as [x, y, w, h]. For more information about text detection refer to [Text Detection using Deep Learning](https://github.com/matlab-deep-learning/Text-Detection-using-Deep-Learning) GitHub repository.
 
-For text recognition, a custom OCR language model is trained for recognizing seven-segment digits using the [OCR Trainer app](https://in.mathworks.com/help/vision/ref/ocrtrainer-app.html#:~:text=The%20OCR%20Trainer%20app%20allows%20you%20to%20label,the%20app%20icon.%20MATLAB%20command%20prompt%3A%20Enter%20ocrTrainer.). For more information about training OCR on custom data, see [Train Optical Character Recognition for Custom Fonts](https://www.mathworks.com/help/vision/ug/train-optical-character-recognition-for-custom-fonts.html).
+For digit recognition, a custom OCR language model is trained for recognizing seven-segment digits using the [OCR Trainer app](https://in.mathworks.com/help/vision/ref/ocrtrainer-app.html#:~:text=The%20OCR%20Trainer%20app%20allows%20you%20to%20label,the%20app%20icon.%20MATLAB%20command%20prompt%3A%20Enter%20ocrTrainer.). For more information about training OCR on custom data, see [Train Optical Character Recognition for Custom Fonts](https://www.mathworks.com/help/vision/ug/train-optical-character-recognition-for-custom-fonts.html).
 
 **Note:** To improve OCR results, see [Troubleshoot ocr Function Results](https://in.mathworks.com/help/vision/ug/troubleshoot-ocr-function-results.html).
 
