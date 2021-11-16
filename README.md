@@ -52,7 +52,7 @@ Recognize Seven Segment Digits
 
 Algorithms
 ---------------------------------------
-The text detection network helps in isolating seven segment text in the image and give bounding boxes (or region of interest) as [x, y, w, h]. For more information about text detection refer to [Text Detection using Deep Learning](https://github.com/matlab-deep-learning/Text-Detection-using-Deep-Learning) GitHub repository.
+The text detection network helps in isolating seven segment digits in the image and give bounding boxes (or region of interest) as [x y width height]. This vector specifies the upper-left corner and size of a rectangluar region of interest in pixels. For more information about text detection refer to [Text Detection using Deep Learning](https://github.com/matlab-deep-learning/Text-Detection-using-Deep-Learning) GitHub repository.
 
 For digit recognition, a custom OCR language model is trained for recognizing seven-segment digits using the [OCR Trainer app](https://in.mathworks.com/help/vision/ref/ocrtrainer-app.html#:~:text=The%20OCR%20Trainer%20app%20allows%20you%20to%20label,the%20app%20icon.%20MATLAB%20command%20prompt%3A%20Enter%20ocrTrainer.). For more information about training OCR on custom data, see [Train Optical Character Recognition for Custom Fonts](https://www.mathworks.com/help/vision/ug/train-optical-character-recognition-for-custom-fonts.html).
 
@@ -62,5 +62,8 @@ References
 ---------------------------------------
 [1] Baek, Y., Lee, B., Han, D., Yun, S. and Lee, H., 2019. Character region awareness for text detection. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9365-9374).
 
+See Also
+------------------------------------
+[Text Detection using Deep Learning](https://github.com/matlab-deep-learning/Text-Detection-using-Deep-Learning)
 
 Copyright 2021 The MathWorks, Inc.
