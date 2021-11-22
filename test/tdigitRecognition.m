@@ -11,8 +11,7 @@ classdef(SharedTestFixtures = {DownloadPretrainedCRAFTFixture}) tdigitRecognitio
     methods(TestClassSetup)
         function setupWorkingDir(test)
             import matlab.unittest.fixtures.CurrentFolderFixture;
-            test.applyFixture(CurrentFolderFixture ...
-                (getRepoRoot()));
+            test.applyFixture(CurrentFolderFixture(getRepoRoot()));
         end
     end
     
