@@ -1,7 +1,7 @@
 function path = getRepoRoot()
 % getRepoRoot   Return a path to the repository's root directory.
 
-% Copyright 2020 The MathWorks, Inc.
+% Copyright 2021 The MathWorks, Inc.
 
 thisFile = mfilename('fullpath');
 thisDir = fileparts(thisFile);
