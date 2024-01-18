@@ -14,6 +14,8 @@ Requirements
 - Computer Vision Toolbox&trade;
 - Computer Vision Toolbox&trade; Model for Text Detection
 
+Note: Previous MATLAB release users can use this branch to download the pretrained models.
+
 Overview
 --------
 
