@@ -9,7 +9,7 @@ This repository implements seven segment digit recognition in MATLAB&reg;.
 Requirements
 ------------  
 
-- MATLAB R2023b or later
+- MATLAB R2022b or later
 - Deep Learning Toolbox&trade;
 - Computer Vision Toolbox&trade;
 - Computer Vision Toolbox&trade; Model for Text Detection
@@ -22,10 +22,6 @@ Overview
 This repository implements seven segment digit recognition using two steps. The first step detects the location of image text using [detectTextCRAFT](https://in.mathworks.com/help/vision/ref/detecttextcraft.html) function that requires Deep Learning Toolbox&trade; and Computer Vision Toolbox&trade; Model for Text Detection. The second stage uses the [OCR](https://in.mathworks.com/help/vision/ref/ocr.html) function from the Computer Vision Toolbox&trade; to recognize the digits. 
 
 The two-step approach helps improve OCR by only processing image regions that contains text. This is useful in industrial automation applications where the digital displays are often surrounded by other objects and background content that can hinder the performance of OCR. 
-
-Getting Started
----------------
-[Recognize Seven-Segment Digits Using OCR](https://in.mathworks.com/help/vision/ug/recognize-seven-segment-digits-using-ocr.html)
 
 Recognize Seven Segment Digits
 ---------------------------------------
@@ -40,9 +36,10 @@ Recognize Seven Segment Digits
 % Binarizing the image before using OCR for better results.
   I = rgb2gray(orgImg);
   BW = imbinarize(I, 'adaptive');
+  BW = ~BW;
   
 % Recognize seven segment digit using ocr.
-  output = ocr(~BW,bboxes,Model="seven-segment");
+  output = ocr(BW,bboxes,Model="seven-segment");
  
 % Display results.
   recognizedWords = cat(1,output(:).Words);
@@ -58,4 +55,4 @@ References
 ---------------------------------------
 [1] Baek, Y., Lee, B., Han, D., Yun, S. and Lee, H., 2019. Character region awareness for text detection. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9365-9374).
 
-Copyright 2021 The MathWorks, Inc.
+Copyright 2021-2024 The MathWorks, Inc.
