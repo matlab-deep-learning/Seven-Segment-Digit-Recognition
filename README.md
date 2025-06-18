@@ -49,7 +49,7 @@ Recognize Seven Segment Digits
 
 <img src="images/workflow.PNG" alt ="image"/>
 
-**Note:** To improve OCR results, see [Troubleshoot ocr Function Results](https://in.mathworks.com/help/vision/ug/troubleshoot-ocr-function-results.html).
+**Note:** To improve OCR results, see [Troubleshoot ocr Function Results](https://in.mathworks.com/help/vision/ug/getting-started-with-ocr.html#mw_f33c02fb-c82b-4db6-be60-d67ce748437d).
 
 References
 ---------------------------------------
